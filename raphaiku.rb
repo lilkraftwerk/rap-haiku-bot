@@ -76,13 +76,14 @@ class Formatter
   def self.format_for_twitter(args)
     haiku_array = args[:haiku_array]
     haiku_array.map!{|string| string.downcase}
-    artist = "#" + haiku_array.shift.gsub(" ", "")
+    artist = "#" + haiku_array.shift.gsub(/\W/, "")
     haiku_array << "\n / #raphaiku / by #{artist}"
     if args[:request]
       haiku_array << "/ requested by @#{args[:request]}"
     end
     return haiku_array.join("\n")
   end
+
 end
 
 
@@ -141,7 +142,13 @@ class RapHaikuBot
         fulfill_request(request)
       end
     else
-      random_haiku
+      num = rand(0..13)
+      if num == 7
+        puts "jackpot!"
+        random_haiku
+      else
+        puts "not this time, cowboy"
+      end
     end
   end
 
@@ -167,4 +174,3 @@ def do_it
   bot.the_whole_thing
 end
 
-do_it
