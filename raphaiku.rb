@@ -3,7 +3,6 @@ require 'ruby_rhymes'
 require 'twitter'
 require 'rapgenius'
 require_relative './rappers'
-require_relative './twitter'
 
 
 def configure_twitter_client
