@@ -1,7 +1,7 @@
 $LOAD_PATH << "."
 
-require 'bot'
+require 'raphaiku'
 
 task :tweet do
-  make_acceptable_tweet
+  do_it
 end
