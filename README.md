@@ -1,6 +1,8 @@
 rap-haiku-bot
 =============
 
+http://twitter.com/rap_haiku
+
 randomly generated haikus from rappers
 
 takes requests via "@rap_haiku request [rapper name goes here]"
